@@ -59,7 +59,6 @@ int print_oct(va_list arg)
 	free(octa);
 	return (charPrinted);
 }
-
 /**
  * print_unsignedIntToHex - prints unsigned int to hexadecimal.
  * @num: number to print

@@ -12,24 +12,29 @@
 
 int printIdentifiers(char next, va_list arg)
 {
-        int functsIndex;
+	int functsIndex;
 
-        identifierStruct functs[] = {
-                {"c", print_char},
-                {"s", print_str},
-                {"d", print_int},
-                {"i", print_int},
-                {NULL, NULL}
-        };
+	identifierStruct functs[] = {
+		{"c", print_char},
+		{"s", print_str},
+		{"d", print_int},
+		{"i", print_int},
+		{"u", print_unsigned},
+		{"b", print_unsignedToBinary},
+		{"o", print_oct},
+		{"x", print_hex},
+		{"X", print_HEX},
+		{"S", print_STR},
+		{NULL, NULL}
+	};
 
-        for (functsIndex = 0; functs[functsIndex].indentifier != NULL; functsIndex++)
-        {
-                if (functs[functsIndex].indentifier[0] == next)
-                        return (functs[functsIndex].printer(arg));
-        }
-        return (0);
+	for (functsIndex = 0; functs[functsIndex].indentifier != NULL; functsIndex++)
+	{
+		if (functs[functsIndex].indentifier[0] == next)
+			return (functs[functsIndex].printer(arg));
+	}
+	return (0);
 }
-
 /**
  * _printf - mimic printf in the standard lib
  * Description: give output according to format

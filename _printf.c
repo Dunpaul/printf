@@ -1,6 +1,6 @@
-#include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "main.h"
 
 /**
  * printIdentifiers - prints special characters
@@ -12,22 +12,22 @@
 
 int printIdentifiers(char next, va_list arg)
 {
-	int functsIndex;
+        int functsIndex;
 
-	identifierStruct functs[] = {
-		{"c", print_char},
-		{"s", print_str},
-		{"d", print_int},
-		{"i", print_int},
-		{NULL, NULL}
-	};
+        identifierStruct functs[] = {
+                {"c", print_char},
+                {"s", print_str},
+                {"d", print_int},
+                {"i", print_int},
+                {NULL, NULL}
+        };
 
-	for (functsIndex = 0; functs[functsIndex].indentifier != NULL; functsIndex++)
-	{
-		if (functs[functsIndex].indentifier[0] == next)
-			return (functs[functsIndex].printer(arg));
-	}
-	return (0);
+        for (functsIndex = 0; functs[functsIndex].indentifier != NULL; functsIndex++)
+        {
+                if (functs[functsIndex].indentifier[0] == next)
+                        return (functs[functsIndex].printer(arg));
+        }
+        return (0);
 }
 
 /**
@@ -82,3 +82,4 @@ int _printf(const char *format, ...)
 	va_end(arg);
 	return (charPrinted);
 }
+

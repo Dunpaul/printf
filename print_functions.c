@@ -71,7 +71,6 @@ for (i = 0; str[i]; i++)
 		if (i < 16)
 			_putchar('0');
 
-		print_unsignedIntToHex(str[i], 'A');
 	}
 	else
 		_putchar(str[i]);
